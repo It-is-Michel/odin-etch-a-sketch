@@ -35,7 +35,7 @@ function paintTileBlack(tile) {
 }
 
 // Get the grid
-const flexGrid = document.querySelector("#flex-grid");
+const flexGrid = document.querySelector("#grid");
 // Set how many rows and columns
 let numOfGridRows = 16;
 let numOfGridColumns = 16;
