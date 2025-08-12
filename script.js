@@ -25,7 +25,13 @@ function createTile(size) {
   // and set the size
   tile.style.width = size;
   tile.style.aspectRatio = "1/1";
+  // paint black on hover
+  tile.addEventListener("mouseover", event => paintTileBlack(event.target));
   return tile;
+}
+
+function paintTileBlack(tile) {
+  tile.style.backgroundColor = "black";
 }
 
 // Get the grid
