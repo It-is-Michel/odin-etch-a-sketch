@@ -41,3 +41,52 @@ let numOfGridRows = 16;
 let numOfGridColumns = 16;
 // Add tiles to the grid
 const flexGridTiles = addTilesToGrid(flexGrid, numOfGridRows, numOfGridColumns);
+
+// Modify the rows and columns of a grid
+function modifyGrid(grid, howManyRows, howManyColumns) {
+  console.log(grid, howManyRows, howManyColumns)
+  // Get the tiles of the grid
+  let gridTiles = Array.from(grid.children);
+  // Remove each child
+  for (let child of gridTiles) {
+    child.remove()
+  };
+  // Fill the grid with the new size
+  addTilesToGrid(grid, howManyRows, howManyColumns);
+}
+
+// Add a button to set the grid size
+// Get the button
+const setGridSizeButton = document.querySelector("button#set-grid-size");
+// when it's clicked, ask user the new size
+setGridSizeButton.addEventListener("click", () => {
+  // Ask user for a valid number between the limits
+  function getNumberFromUser(min, max, message) {
+    let userInput;
+    while (true) {
+      userInput = prompt(message);
+      // Valid input
+      let isNumber = !isNaN(userInput)
+      let isInRange = userInput >= 1 && userInput <= 100;
+      let isValid = isNumber && isInRange;
+      if (isValid) {
+        // Return valid input
+        userInput = Number(userInput);
+        return userInput;
+      } else if (userInput === null) {
+        // Return null
+        return userInput;
+      } else {
+        // Ask user to type in a valid input
+        alert(`${userInput} is not valid. Please, type in a number between ${min} and ${max} (inclusive).`);
+      };
+    };
+  };
+  // Ask user for the new size of the grid
+  const howManyRows = getNumberFromUser(1, 100, "How many rows?");
+  if (howManyRows === null) return;
+  const howManyColumns = getNumberFromUser(1, 100, "How many columns?");
+  if (howManyColumns === null) return;
+  // Modify the grid to the user's specification
+  modifyGrid(flexGrid, howManyRows, howManyColumns);
+})

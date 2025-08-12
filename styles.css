@@ -17,3 +17,8 @@ div#flex-grid {
 div.tile {
   background-color: whitesmoke;
 }
+
+button#set-grid-size {
+  display: block;
+  margin: 1vw auto;
+}
