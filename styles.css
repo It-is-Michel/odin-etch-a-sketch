@@ -5,3 +5,8 @@
 body {
   margin: 0;
 }
+
+div#flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
