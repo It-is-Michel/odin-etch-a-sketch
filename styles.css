@@ -17,3 +17,7 @@ div#flex-grid {
 div.tile {
   background-color: whitesmoke;
 }
+
+.painted {
+  background-color: black;
+}
