@@ -1,3 +1,22 @@
+// Create and add tiles to a grid
+function addTilesToGrid(grid, howManyRows, howManyColumns) {
+  // Set tile size in terms of parent's size
+  const tileSize = `${100 / howManyRows}%`;
+  // Calculate how many tiles the grid has
+  const howManyTiles = howManyRows * howManyColumns;
+  
+  // Iterate (howManyRows * howManyColumns) times
+  for (let i = 0; i < howManyTiles; i++) {
+    // Create a tile
+    const tile = createTile(tileSize);
+    // Add tile to grid    
+    grid.appendChild(tile);
+  }
+
+  // Return tiles NodeList
+  return grid.children;
+}
+
 function createTile(size) {
   // Create an element for the tile
   const tile = document.createElement("div");
