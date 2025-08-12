@@ -13,3 +13,7 @@ div#flex-grid {
   display: flex;
   flex-wrap: wrap;
 }
+
+div.tile {
+  background-color: darkseagreen;
+}
