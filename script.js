@@ -24,7 +24,6 @@ function createTile(size) {
   tile.classList.add("tile");
   // and set the size
   tile.style.width = size;
-  tile.style.aspectRatio = "1/1";
   // paint black on hover
   tile.addEventListener("mouseover", event => paintTileBlack(event.target));
   return tile;

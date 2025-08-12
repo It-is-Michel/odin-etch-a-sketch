@@ -15,6 +15,7 @@ div#grid {
 
 div.tile {
   background-color: whitesmoke;
+  aspect-ratio: 1/1;
 }
 
 button#set-grid-size {
