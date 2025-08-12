@@ -27,3 +27,11 @@ function createTile(size) {
   tile.style.aspectRatio = "1/1";
   return tile;
 }
+
+// Get the grid
+const flexGrid = document.querySelector("#flex-grid");
+// Set how many rows and columns
+let numOfGridRows = 16;
+let numOfGridColumns = 16;
+// Add tiles to the grid
+const flexGridTiles = addTilesToGrid(flexGrid, numOfGridRows, numOfGridColumns);
