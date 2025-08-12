@@ -8,6 +8,8 @@ body {
 
 div#flex-grid {
   background-color: rgb(240, 240, 240);
+  margin: auto;
+  padding: 5vh;
   display: flex;
   flex-wrap: wrap;
 }
