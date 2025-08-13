@@ -18,7 +18,6 @@ function addTilesToGrid(grid, howManyRows, howManyColumns) {
 }
 
 function createTile(size) {
-  console.log(size);
   // Create an element for the tile
   const tile = document.createElement("div");
   // add a css class
@@ -26,8 +25,16 @@ function createTile(size) {
   // and set the size
   tile.style.height = size;
   // paint black on hover
-  const paintTileBlack = (tile) => tile.style.backgroundColor = "black"; 
-  tile.addEventListener("mouseover", event => paintTileBlack(event.target));
+  const paintTile = (tile) => {
+    const red = Math.floor(Math.random() * 255);
+    const green = Math.floor(Math.random() * 255);
+    const blue = Math.floor(Math.random() * 255);
+    tile.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
+    const tileCurrentOpacity = window.getComputedStyle(tile).opacity;
+    const opacity = tileCurrentOpacity > 0 ? tileCurrentOpacity - 0.1 : 0;
+    tile.style.opacity = opacity;
+  }; 
+  tile.addEventListener("mouseover", event => paintTile(event.target));
   return tile;
 }
 
