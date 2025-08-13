@@ -18,12 +18,13 @@ function addTilesToGrid(grid, howManyRows, howManyColumns) {
 }
 
 function createTile(size) {
+  console.log(size);
   // Create an element for the tile
   const tile = document.createElement("div");
   // add a css class
   tile.classList.add("tile");
   // and set the size
-  tile.style.width = size;
+  tile.style.height = size;
   // paint black on hover
   const paintTileBlack = (tile) => tile.style.backgroundColor = "black"; 
   tile.addEventListener("mouseover", event => paintTileBlack(event.target));

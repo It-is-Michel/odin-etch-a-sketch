@@ -8,6 +8,8 @@ body {
 
 div#grid {
   background-color: rgb(240, 240, 240);
+  height: 90vh;
+  aspect-ratio: 1/1;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
