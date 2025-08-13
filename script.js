@@ -58,32 +58,21 @@ const setGridSizeButton = document.querySelector("button#set-grid-size");
 // when it's clicked, ask user the new size
 setGridSizeButton.addEventListener("click", () => {
   // Ask user for a valid number between the limits
-  function getNumberFromUser(min, max, message) {
-    let userInput;
-    while (true) {
-      userInput = prompt(message);
-      // Valid input
-      let isNumber = !isNaN(userInput)
-      let isInRange = userInput >= 1 && userInput <= 100;
-      let isValid = isNumber && isInRange;
-      if (isValid) {
-        // Return valid input
-        userInput = Number(userInput);
-        return userInput;
-      } else if (userInput === null) {
-        // Return null
-        return userInput;
-      } else {
-        // Ask user to type in a valid input
-        alert(`${userInput} is not valid. Please, type in a number between ${min} and ${max} (inclusive).`);
-      };
+  while (true) {
+    newSize = prompt("Type in a size between 1 and 100 (inclusive)");
+    // Valid input
+    let isNumber = !isNaN(newSize)
+    let isInRange = newSize >= 1 && newSize <= 100;
+    let isValid = isNumber && isInRange;
+    if (isValid) {
+      newSize = Number(newSize);
+      modifyGrid(flexGrid, newSize, newSize);
+      break;
+    } else if (newSize === null) {
+      break;
+    } else {
+      // Ask user to type in a valid input
+      alert(`${newSize} is not valid. Please, type in a number between 1 and 100 (inclusive).`);
     };
   };
-  // Ask user for the new size of the grid
-  const howManyRows = getNumberFromUser(1, 100, "How many rows?");
-  if (howManyRows === null) return;
-  const howManyColumns = getNumberFromUser(1, 100, "How many columns?");
-  if (howManyColumns === null) return;
-  // Modify the grid to the user's specification
-  modifyGrid(flexGrid, howManyRows, howManyColumns);
 })
