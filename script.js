@@ -25,12 +25,9 @@ function createTile(size) {
   // and set the size
   tile.style.width = size;
   // paint black on hover
+  const paintTileBlack = (tile) => tile.style.backgroundColor = "black"; 
   tile.addEventListener("mouseover", event => paintTileBlack(event.target));
   return tile;
-}
-
-function paintTileBlack(tile) {
-  tile.style.backgroundColor = "black";
 }
 
 // Get the grid
